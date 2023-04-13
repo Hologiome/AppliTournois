@@ -1,8 +1,8 @@
 
 import { StyleSheet, View, Text } from 'react-native';
-import Top10Poeple from '../components/Equipe';
+import Equipe from '../components/Equipe';
 
-export default function Equipe(props) {
+export default function EquipeView(props) {
   return (
     <View style={styles.container}>  
     <Equipe></Equipe>

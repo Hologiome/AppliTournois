@@ -126,22 +126,40 @@ export default function Equipe(props) {
 
 
   const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    item: {
-    },
-    image: {
-      width: 200,
-      height: 200,
-      margin: 5,
-      backgroundColor: 'gray'
-    },
-    title: {
-      fontSize: 20,
-    },
+    // container: {
+    //   flex: 1,
+    //   backgroundColor: '#fff',
+    //   alignItems: 'center',
+    //   justifyContent: 'center',
+    // },
+    // item: {
+    // },
+    // image: {
+    //   width: 200,
+    //   height: 200,
+    //   margin: 5,
+    //   backgroundColor: 'gray'
+    // },
+    // title: {
+    //   fontSize: 20,
+    // },
+    // .gradient-custom-2 {
+    //   /* fallback for old browsers */
+    //   background: #fbc2eb;
+    
+    //   /* Chrome 10-25, Safari 5.1-6 */
+    //   background: -webkit-linear-gradient(
+    //     to right,
+    //     rgba(251, 194, 235, 1),
+    //     rgba(166, 193, 238, 1)
+    //   );
+    
+    //   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    //   background: linear-gradient(
+    //     to right,
+    //     rgba(251, 194, 235, 1),
+    //     rgba(166, 193, 238, 1)
+    //   );
+    
   });
 

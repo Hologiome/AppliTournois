@@ -8,7 +8,7 @@ import { Ionicons } from '@expo/vector-icons';
 import AccueilView from './screens/AccueilView'
 import FilmsView from './screens/FilmsView'
 import DetailView from './screens/DetailView'
-import Equipe from './screens/EquipeView'
+import EquipeView from './screens/EquipeView'
 
 // --  navigation principale = TabBar
 export default function App() {
@@ -35,7 +35,7 @@ export default function App() {
         />
         <Tab.Screen 
         name="Profil" 
-        component={Top10Screen} 
+        component={FilmsScreen} 
         options={{
           tabBarLabel: 'Profil',
           tabBarIcon: ({ color, size }) => (
@@ -45,7 +45,7 @@ export default function App() {
         />
         <Tab.Screen 
         name="Equipe" 
-        component={Equipe} 
+        component={EquipeScreen} 
         options={{
           tabBarLabel: 'Equipe',
           tabBarIcon: ({ color, size }) => (
@@ -70,11 +70,11 @@ function FilmsScreen() {
   )
 }
 // -- classement des acteurs (le top10...)
-function Top10Screen() {
+function EquipeScreen() {
   const StackTop10 = createNativeStackNavigator();
   return (      
   <StackTop10.Navigator>
-    <StackTop10.Screen name="Top" component={Top10View} />
+    <StackTop10.Screen name="Top" component={EquipeView} />
   </StackTop10.Navigator>
   )
 }
