@@ -9,6 +9,7 @@ import AccueilView from './screens/AccueilView'
 import FilmsView from './screens/FilmsView'
 import DetailView from './screens/DetailView'
 import EquipeView from './screens/EquipeView'
+import ProfilView from './screens/ProfilView'
 
 // --  navigation principale = TabBar
 export default function App() {
@@ -35,7 +36,7 @@ export default function App() {
         />
         <Tab.Screen 
         name="Profil" 
-        component={FilmsScreen} 
+        component={ProfilScreen} 
         options={{
           tabBarLabel: 'Profil',
           tabBarIcon: ({ color, size }) => (
@@ -76,5 +77,14 @@ function EquipeScreen() {
   <StackTop10.Navigator>
     <StackTop10.Screen name="Top" component={EquipeView} />
   </StackTop10.Navigator>
+  )
+}
+
+function ProfilScreen() {
+  const Profil = createNativeStackNavigator();
+  return (      
+  <Profil.Navigator>
+    <Profil.Screen name="Profil" component={ProfilView} />
+  </Profil.Navigator>
   )
 }
