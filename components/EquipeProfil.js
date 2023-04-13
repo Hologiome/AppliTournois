@@ -3,11 +3,10 @@ import { FlatList, View, Image, StyleSheet, Text, TouchableOpacity , Button} fro
 
 
 
-export default function Profil(props) {
-  const url = "https://keran.alwaysdata.net/api/joueur/1"
+export default function EquipeProfil(props) {
+  const url = "https://keran.alwaysdata.net/api/equipe"+ props.idEquipe;
+  const [listeEquipe, setEquipe] = useState([]);
   const fetchOptions = { method: "GET" };
-  // -- state = liste des personnes
-  const [infoJoueur, setJoueur] = useState({});
   
 
   // -- requete initiala
@@ -19,35 +18,35 @@ export default function Profil(props) {
   function getDatas() {
     fetch(url, fetchOptions)
       .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
+        console.log(response);
         return response.json();
       })
       .then((dataJSON) => {
-        setJoueur(dataJSON);
+        console.log(dataJSON);
+        setEquipe(dataJSON);
       })
       .catch((error) => {
         console.log(error);
       });
   }
+  
+  
   return (
     <View style={styles.container}>  
-    <Image source={ { uri : infoJoueur.img}} style={styles.image}></Image>
-    <Button 
-          color="#24e082"
-	        onPress={ () =>	props.navigation.navigate("Equipe")}  title="Editer profile">
-    </Button>
     <View style={styles.item}> 
-          <Text style={styles.title}>{infoJoueur.pseudo}</Text>
-          <Text >{infoJoueur.date_inscription}</Text>
+                  <Image 
+                        source={ { 
+                            uri : "https://ggscore.com/media/logo/t64714.png?94" 
+                                 
+                            
+                        }} 
+                        style={styles.image}></Image>
+                </View>
+                <View style={styles.item}> 
+                    <Text style={styles.title}>{item.nom_equipe}</Text>
+                    <Text style={styles.title}>{item.date_creation}</Text>
+                    <Text style={styles.title}> Points :{item.points}</Text>
     </View>
-    <View > 
-          <Text >Points : {infoJoueur.point}</Text>
-          <Text >Match Win : {infoJoueur.win}</Text>
-          <Text >Tournois Win : {infoJoueur.win}</Text>
-    </View>
-    <Text style={styles.title}>Team</Text>
     </View>
         
 

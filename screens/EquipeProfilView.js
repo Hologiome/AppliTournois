@@ -1,10 +1,11 @@
 import { StyleSheet, View, Text } from 'react-native';
-import Profil from '../components/Profil';
+import EquipeProfil from '../components/EquipeProfil';
 
-export default function ProfilView(props) {
+export default function EquipeProfilView(props) {
+  const paramIdEquipe  = props.route.params.idEquipe;
   return (
     <View style={styles.container}>  
-    <Profil></Profil>
+    <EquipeProfil idEquipe={paramIdEquipe}></EquipeProfil>
     </View>
     
   );
