@@ -1,12 +1,11 @@
 
 import { StyleSheet, View, Text } from 'react-native';
-import Top10Poeple from '../components/Top10People';
+import Top10Poeple from '../components/Equipe';
 
-export default function Top10View(props) {
+export default function Equipe(props) {
   return (
     <View style={styles.container}>  
-    <Text>Top10</Text>
-    <Top10Poeple></Top10Poeple>
+    <Equipe></Equipe>
     </View>
     
   );

@@ -8,7 +8,7 @@ import { Ionicons } from '@expo/vector-icons';
 import AccueilView from './screens/AccueilView'
 import FilmsView from './screens/FilmsView'
 import DetailView from './screens/DetailView'
-import Top10View from './screens/Top10View'
+import Equipe from './screens/EquipeView'
 
 // --  navigation principale = TabBar
 export default function App() {
@@ -27,19 +27,29 @@ export default function App() {
         name="Search films" 
         component={FilmsScreen} 
         options={{
-          tabBarLabel: 'Films',
+          tabBarLabel: 'Tournois',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="search" color={color} size={size} />
           ),
         }}
         />
         <Tab.Screen 
-        name="Top10 acteurs" 
+        name="Profil" 
         component={Top10Screen} 
         options={{
-          tabBarLabel: 'Top 10',
+          tabBarLabel: 'Profil',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="person" color={color} size={size} />
+          ),
+        }}
+        />
+        <Tab.Screen 
+        name="Equipe" 
+        component={Equipe} 
+        options={{
+          tabBarLabel: 'Equipe',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="people-outline" color={color} size={size} />
           ),
         }}
         />
