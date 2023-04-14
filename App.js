@@ -13,6 +13,8 @@ import ProfilView from './screens/ProfilView'
 import EquipeProfilView from './screens/EquipeProfilView'
 import ListeTournoisView from './screens/ListeTournoisView'
 import InscriptionView from './screens/InscriptionView'
+import AjouterTournoisView from './screens/AjouterTournoisView'
+import EditProfilView from './screens/EditProfilView'
 
 // --  navigation principale = TabBar
 export default function App() {
@@ -72,6 +74,7 @@ function FilmsScreen() {
     <Stack.Screen name="Detail" component={DetailView} />
     <Stack.Screen name="ListeTournois" component={ListeTournoisView} />
     <Stack.Screen name="Inscription" component={InscriptionView} />
+    <Stack.Screen name="AjouterTournois" component={AjouterTournoisView} />
   </Stack.Navigator>
   )
 }
@@ -91,7 +94,7 @@ function ProfilScreen() {
   return (      
   <StackProfil.Navigator>
     <StackProfil.Screen name="Info" component={ProfilView} />
-    
+    <StackProfil.Screen name="EditProfil" component={EditProfilView} />
   </StackProfil.Navigator>
   )
 }

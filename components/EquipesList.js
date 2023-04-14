@@ -33,7 +33,7 @@ export default function Equipe(props) {
   return (
     <FlatList
     data={listeEquipe}
-    keyExtractor={ (equipe) => equipe.id_equipe.toString() }
+    keyExtractor={ (equipe) => equipe.id_equipe.toString() } 
     renderItem={({item}) => {
       console.log(item)
         return(

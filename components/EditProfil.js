@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { FlatList, View, Image, StyleSheet, Text, TouchableOpacity , Button,TextInput} from "react-native";
 
 
-export default function Inscription() {
+export default function Inscription(props) {
   const [pseudo, setPseudo] = useState("");
   const [email, setEmail] = useState("");
   const [mdp, setMdp] = useState("");
@@ -10,20 +10,17 @@ export default function Inscription() {
 
   
   const handleSubmit =() => {
-    console.log(pseudo)
-    console.log(email)
-    console.log(mdp)
-    console.log(img)
     try {
       const response =  fetch(
-        "https://keran.alwaysdata.net/api/inscription",
+        "https://keran.alwaysdata.net/api/joueur"+props.idJoueur,
         {
-          method: "POST",
+          method: "PUT",
           headers: {
             "Content-Type": "application/json"
           },
        
           body: JSON.stringify({
+            id_joueur:1,
             pseudo:pseudo,
             email:email,
             mdp:mdp,

@@ -12,24 +12,24 @@ export default function AccueilView(props) {
         </Button>
         <Button 
           color="#24e082"
-	        onPress={ () =>	props.navigation.navigate("Films",{"critere":text})}  title="Ajouter un tournois">
+	        onPress={ () =>	props.navigation.navigate("AjouterTournois")}  title="Ajouter un tournois">
         </Button>
-      <Image
+      {/* <Image
           style={styles.image}
           source={require('../assets/themoviedb.png')}
-        />
+        /> */}
       {/* la zone de saisie du critere */}
-        <TextInput
+        {/* <TextInput
           style={styles.input}
           onChangeText={onChangeText}
           value={text}
           placeholder="citere de recherche"
-        />
+        /> */}
         {/* bouton pour passer à la vue "Films" en lui donnont le critere saisi */}
-        <Button 
+        {/* <Button 
           color="#24e082"
 	        onPress={ () =>	props.navigation.navigate("Films",{"critere":text})}  title="Rechercher un film">
-        </Button>
+        </Button> */}
 
         <Image
           style={styles.image}
