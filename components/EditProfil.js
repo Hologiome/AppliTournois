@@ -3,16 +3,17 @@ import { FlatList, View, Image, StyleSheet, Text, TouchableOpacity , Button,Text
 
 
 export default function Inscription(props) {
-  const [pseudo, setPseudo] = useState("");
-  const [email, setEmail] = useState("");
-  const [mdp, setMdp] = useState("");
-  const [img, setImg] = useState("");
 
+  const [pseudo, setPseudo] = useState(props.infoJoueur.pseudo);
+  const [email, setEmail] = useState(props.infoJoueur.email);
+  const [img, setImg] = useState(props.infoJoueur.img);
+
+ 
   
   const handleSubmit =() => {
     try {
       const response =  fetch(
-        "https://keran.alwaysdata.net/api/joueur"+props.idJoueur,
+        "https://keran.alwaysdata.net/api/joueur",
         {
           method: "PUT",
           headers: {
@@ -20,10 +21,10 @@ export default function Inscription(props) {
           },
        
           body: JSON.stringify({
-            id_joueur:1,
+            id_joueur: props.infoJoueur.id_joueur,
             pseudo:pseudo,
             email:email,
-            mdp:mdp,
+
             img:img
           })
         }
@@ -47,29 +48,21 @@ export default function Inscription(props) {
           style={styles.input}
           onChangeText={setPseudo}
           value={pseudo}
-          placeholder="Pseudo"
+          placeholder={props.infoJoueur.pseudo}
         />
     <Text style={styles.title}>Email</Text> 
      <TextInput
           style={styles.input}
           onChangeText={setEmail}
           value={email}
-          placeholder="Email"
-        />
-    <Text style={styles.title}>Mot de passe</Text> 
-     <TextInput
-        secureTextEntry={true}
-          style={styles.input}
-          onChangeText={setMdp}
-          value={mdp}
-          placeholder="Mot de passe"
+          placeholder={props.infoJoueur.email}
         />
     <Text style={styles.title}>Image</Text> 
      <TextInput
           style={styles.input}
           onChangeText={setImg}
           value={img}
-          placeholder="Image"
+          placeholder={props.infoJoueur.img}
         />
 
 

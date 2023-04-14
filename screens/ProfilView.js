@@ -4,7 +4,7 @@ import Profil from '../components/Profil';
 export default function ProfilView(props) {
   return (
     <View style={styles.container}>  
-    <Profil></Profil>
+    <Profil {...props}></Profil>
     </View>
     
   );

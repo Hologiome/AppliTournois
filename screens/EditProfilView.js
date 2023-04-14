@@ -2,10 +2,10 @@ import { StyleSheet, View, Text } from 'react-native';
 import EditProfil from '../components/EditProfil';
 
 export default function EditProfilView(props) {
-  const paramIdJoueur  = props.route.params.idJoueur;
+  const paramInfoJoueur  = props.route.params.infoJoueur;
   return (
     <View style={styles.container}>  
-    <EditProfil idJoueur={paramIdJoueur}></EditProfil>
+    <EditProfil infoJoueur={paramInfoJoueur}></EditProfil>
     </View>
     
   );

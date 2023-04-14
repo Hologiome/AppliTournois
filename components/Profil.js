@@ -36,7 +36,7 @@ export default function Profil(props) {
     <Image source={ { uri : infoJoueur.img}} style={styles.image}></Image>
     <Button 
           color="#24e082"
-	        onPress={ () =>	props.navigation.navigate("EditProfil", {idJoueur:infoJoueur.id_joueur})}  title="Editer profile">
+	        onPress={ () =>	props.navigation.navigate("EditProfil", {infoJoueur:infoJoueur})}  title="Editer profile">
     </Button>
     <View style={styles.item}> 
           <Text style={styles.title}>{infoJoueur.pseudo}</Text>
