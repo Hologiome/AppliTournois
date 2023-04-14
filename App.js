@@ -16,6 +16,7 @@ import InscriptionView from './screens/InscriptionView'
 import AjouterTournoisView from './screens/AjouterTournoisView'
 import EditProfilView from './screens/EditProfilView'
 import CreerTeamView from './screens/CreerTeamView'
+import ProfilPublicView from './screens/ProfilPublicView'
 
 // --  navigation principale = TabBar
 export default function App() {
@@ -86,6 +87,7 @@ function EquipeScreen() {
   <StackTop10.Navigator>
     <StackTop10.Screen name="Top" component={EquipeView} />
     <StackTop10.Screen name="EquipeProf" component={EquipeProfilView} />
+    <StackTop10.Screen name="ProfilPublic" component={ProfilPublicView} />
   </StackTop10.Navigator>
   )
 }
