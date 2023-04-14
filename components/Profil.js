@@ -47,7 +47,12 @@ export default function Profil(props) {
           <Text >Match Win : {infoJoueur.win}</Text>
           <Text >Tournois Win : {infoJoueur.win}</Text>
     </View>
-    <Text style={styles.title}>Team</Text>
+    <Button 
+          color="#24e082"
+	        onPress={ () =>	props.navigation.navigate("CreerTeam", {infoJoueur:infoJoueur})}  title="Creer une team">
+    </Button>
+    <Text style={styles.title}>Teams</Text>
+    
     </View>
         
 
