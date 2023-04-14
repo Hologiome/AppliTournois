@@ -17,6 +17,7 @@ import AjouterTournoisView from './screens/AjouterTournoisView'
 import EditProfilView from './screens/EditProfilView'
 import CreerTeamView from './screens/CreerTeamView'
 import ProfilPublicView from './screens/ProfilPublicView'
+import ProfilTournoisView from './screens/ProfilTournoisView'
 
 // --  navigation principale = TabBar
 export default function App() {
@@ -77,6 +78,7 @@ function FilmsScreen() {
     <Stack.Screen name="ListeTournois" component={ListeTournoisView} />
     <Stack.Screen name="Inscription" component={InscriptionView} />
     <Stack.Screen name="AjouterTournois" component={AjouterTournoisView} />
+    <Stack.Screen name="ProfilTournois" component={ProfilTournoisView} />
   </Stack.Navigator>
   )
 }

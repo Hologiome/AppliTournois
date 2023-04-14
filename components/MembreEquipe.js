@@ -55,7 +55,7 @@ export default function MembreEquipe(props) {
                 </View>
           </TouchableOpacity>
           <TouchableOpacity
-              onPress={ () =>	props.navigation.navigate("S", {idJoueur:item.id_joueur})}>
+              onPress={ () =>	props.navigation.navigate("ProfilPublic", {idJoueur:item.id_joueur})}>
                 
                 <View style={styles.item}> 
                 <Ionicons name="close-outline"  size={taille}/>
