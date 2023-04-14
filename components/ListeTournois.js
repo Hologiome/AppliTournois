@@ -2,27 +2,27 @@ import { useState, useEffect } from "react";
 import { FlatList, View, Image, StyleSheet, Text, TouchableOpacity , Button} from "react-native";
 
 
-export default function Equipe(props) {
-  const url = "https://keran.alwaysdata.net/api/equipe";
-  const [listeEquipe, setEquipe] = useState([]);
+export default function ListeTournois(props) {
+    const url = "https://keran.alwaysdata.net/api/tournois";
+    const [listeTournois, setTournois] = useState([]); 
   const fetchOptions = { method: "GET" };
   
 
   // -- requete initiala
   useEffect(() => {
     getDatas()
-  }, []);
+  }, [props.pcritere]);
 
   // -- req AJAX = la 1ère et les suivantes en gérant le num de page
   function getDatas() {
-    fetch(url, fetchOptions)
+    fetch(url + props.pcritere, fetchOptions)
       .then((response) => {
         console.log(response);
         return response.json();
       })
       .then((dataJSON) => {
         console.log(dataJSON);
-        setEquipe(dataJSON);
+        setTournois(dataJSON);
       })
       .catch((error) => {
         console.log(error);
@@ -32,8 +32,8 @@ export default function Equipe(props) {
   
   return (
     <FlatList
-    data={listeEquipe}
-    keyExtractor={ (equipe) => equipe.id_equipe.toString() }
+    data={listeTournois}
+    keyExtractor={ (tournois) => tournois.id_tournois.toString() }
     renderItem={({item}) => {
       console.log(item)
         return(
@@ -43,16 +43,16 @@ export default function Equipe(props) {
                 <View style={styles.item}> 
                   <Image 
                         source={ { 
-                            uri : "https://ggscore.com/media/logo/t64714.png?94" 
+                            uri : "https://editors.dexerto.com/wp-content/uploads/2023/03/21/csgo-new-logo-counter-strike.jpg" 
                                  
                             
                         }} 
                         style={styles.image}></Image>
                 </View>
                 <View style={styles.item}> 
-                    <Text style={styles.title}>{item.nom_equipe}</Text>
-                    <Text style={styles.title}>{item.date_creation}</Text>
-                    <Text style={styles.title}> Points :{item.points}</Text>
+                    <Text style={styles.title}>{item.nom_tournois}</Text>
+                    <Text style={styles.title}>{item.date_tournois}</Text>
+                    <Text style={styles.title}> Points :{item.slotes}</Text>
                 </View>
           </TouchableOpacity>
         )

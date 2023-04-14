@@ -4,7 +4,7 @@ import { FlatList, View, Image, StyleSheet, Text, TouchableOpacity , Button} fro
 
 
 export default function EquipeProfil(props) {
-  const url = "https://keran.alwaysdata.net/api/equipe"+ props.idEquipe;
+  const url = "https://keran.alwaysdata.net/api/equipe/"+ props.idEquipe;
   const [listeEquipe, setEquipe] = useState([]);
   const fetchOptions = { method: "GET" };
   
@@ -43,9 +43,9 @@ export default function EquipeProfil(props) {
                         style={styles.image}></Image>
                 </View>
                 <View style={styles.item}> 
-                    <Text style={styles.title}>{item.nom_equipe}</Text>
-                    <Text style={styles.title}>{item.date_creation}</Text>
-                    <Text style={styles.title}> Points :{item.points}</Text>
+                    <Text style={styles.title}>{listeEquipe.nom_equipe}</Text>
+                    <Text style={styles.title}>{listeEquipe.date_creation}</Text>
+                    <Text style={styles.title}> Points :{listeEquipe.points}</Text>
     </View>
     </View>
         
